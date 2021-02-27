@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Robot sur mesure</title>
+</head>
+
+<body>
+    <?php if(empty($_GET)){ ?>
+   <form action="" method="get">
+       <div>
+           <label for="nameRobot">Nom robot</label>
+           <input type="text" name="nameRobot"/>
+       </div>
+
+       <div>
+          <input type="radio"  name="mentalRobot" value="bad" >
+          <label for="bad">bad robot</label>
+       </div>
+
+       <div>
+          <input type="radio"  name="mentalRobot" value="good">
+          <label for="good">good robot</label>
+       </div>
+       <div>
+          <input type="radio"  name="mentalRobot" value="<?php $mental?>"  >
+          <label for="aleatoire">personality robot aleatoire</label>
+       </div>
+       <input type="submit" value="Submit"/>
+   </form>
+       <?php }
+
+       else{ ?>
+
+           <h3>Salut, humain. Je suis <?php echo $nameRobot; ?></h3>
+           <h3>mon robot est : <?php echo $mental; ?></h3>
+           <?php } ?>
+
+</body>
+</html>
